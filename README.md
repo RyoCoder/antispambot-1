@@ -1,6 +1,6 @@
 # AntiSpam Bot
 
-A simple bot to remove any t.me/joinchat links sent by bots to advertise in groups.
+A simple bot to remove any t.me/joinchat links sent by bots to advertise in groups, made with python-telegram-bot.
 Big thanks to [@drunktimelord](https://t.me/drunktimelord) because I am a noob.
 
 # How to use
