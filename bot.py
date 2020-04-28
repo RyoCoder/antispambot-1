@@ -5,7 +5,7 @@ def check_spam(bot, update):
     msg_text = msg.text or msg.caption
     member = bot.get_chat_member(msg.chat_id, msg.from_user.id)
 
-    if member.status == 'member':
+    if member.status in ['member', 'restricted']:
         if (msg_text and
                 't.me/joinchat' in msg_text):
             try:
