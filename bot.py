@@ -1,14 +1,18 @@
 from telegram.ext import Updater, MessageHandler, Filters
 
 def check_spam(bot, update):
-    msg_text = update.message.text or update.message.caption
-    if (msg_text and
-            't.me/joinchat' in msg_text):
-        try:
-            update.message.delete()
-            bot.kick_chat_member(update.message.chat_id, update.message.from_user.id)
-        except:
-            pass
+    msg = update.message
+    msg_text = msg.text or msg.caption
+    member = bot.get_chat_member(msg.chat_id, msg.from_user.id)
+
+    if member.status == 'member':
+        if (msg_text and
+                't.me/joinchat' in msg_text):
+            try:
+                update.message.delete()
+                bot.kick_chat_member(msg.chat_id, msg.from_user.id)
+            except:
+                pass
 
 updater = Updater(token=".. .")
 dispatcher = updater.dispatcher
