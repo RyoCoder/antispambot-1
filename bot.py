@@ -11,6 +11,7 @@ def check_spam(bot, update):
             try:
                 update.message.delete()
                 bot.kick_chat_member(msg.chat_id, msg.from_user.id)
+                bot.unban_chat_member(msg.chat_id, msg.from_user.id)
             except:
                 pass
 
