@@ -5,7 +5,7 @@ Big thanks to [@drunktimelord](https://t.me/drunktimelord) because I am a noob.
 
 # How to use
 
-  - Paste your token in "token=.." at line 13.
+  - Paste your token in "token=.." at line 18.
   - Execute `pip3 install -r requirements.txt`
   - Execute `python bot.py`
   - Done.
