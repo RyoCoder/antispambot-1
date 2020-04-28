@@ -6,11 +6,11 @@ def check_spam(bot, update):
             't.me/joinchat' in msg_text):
         try:
             update.message.delete()
-            bot.kick_chat_member(update.message.from_user.id)
+            bot.kick_chat_member(update.message.chat_id, update.message.from_user.id)
         except:
             pass
 
-updater = Updater(token="...")
+updater = Updater(token=".. .")
 dispatcher = updater.dispatcher
 
 dispatcher.add_handler(MessageHandler(Filters.all, check_spam))
