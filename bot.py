@@ -7,7 +7,7 @@ def check_spam(bot, update):
 
     if member.status in ['member', 'restricted']:
         if (msg_text and
-                't.me/joinchat' in msg_text):
+                't.me/' in msg_text):
             try:
                 update.message.delete()
                 bot.kick_chat_member(msg.chat_id, msg.from_user.id)
@@ -15,7 +15,7 @@ def check_spam(bot, update):
             except:
                 pass
 
-updater = Updater(token=".. .")
+updater = Updater(token="5045530072:AAF9xoVmzorf3Cb7UXgZvtEmTrQolxBFXGE")
 dispatcher = updater.dispatcher
 
 dispatcher.add_handler(MessageHandler(Filters.all, check_spam))
